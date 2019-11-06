@@ -75,6 +75,11 @@ public class UserInfoPlusController {
         queryWrapper5.lambda().isNotNull(UserInfoEntity::getEvaluate);
         page = userInfoService.page(page,queryWrapper5);
         result.put("studentPage",page);
+
+        QueryWrapper<UserInfoEntity> queryWrapper6 = new QueryWrapper<>();
+        queryWrapper6.lambda().ne(UserInfoEntity::getAge, 18);
+        List<UserInfoEntity> userInfoEntityList6 = userInfoService.list(queryWrapper6);
+        result.put("userInfoEntityList6",userInfoEntityList6);
         return result;
     }
 

@@ -126,6 +126,7 @@ public class UserInfoController {
         list.add(sans);
         list.add(papyrus);
         userInfoService.saveBatch(list);
+
     }
     /**
      * 更新用户信息
